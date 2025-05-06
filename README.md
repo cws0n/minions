@@ -15,3 +15,6 @@ docker build -t minion-proxy .
 
 run the container
 docker run -p 3000:3000 -d minion-proxy
+
+
+# DEPLOY TO ANY SEERVICEEE
