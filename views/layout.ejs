@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minion Proxy</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="tab-bar">
+    <div class="tabs-container" id="tabsContainer">
+      <% tabs.forEach(tab => { %>
+        <div class="tab <%= tab.id === activeTab ? 'active' : '' %>" data-tabid="<%= tab.id %>">
+          <span><%= tab.title %></span>
+          <span class="close-tab">&times;</span>
+        </div>
+      <% }); %>
+      <div class="new-tab" id="newTabButton">+</div>
+    </div>
+  </div>
+  
+  <div class="search-bar">
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search or enter website URL">
+      <button type="submit">Go</button>
+    </form>
+  </div>
+  
+  <div class="content-area" id="contentArea">
+    <%- body %>
+  </div>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
